@@ -23,6 +23,8 @@ COPY --from=build /app/publish .
 # Create required Umbraco directories
 RUN mkdir -p /app/wwwroot/media \
     && mkdir -p /app/umbraco/Data \
-    && mkdir -p /app/umbraco/Logs
+    && mkdir -p /app/umbraco/Logs \
+    && chmod -R 777 /app/wwwroot \
+    && chmod -R 777 /app/umbraco
 
 ENTRYPOINT ["dotnet", "sahanaweb.dll"]
