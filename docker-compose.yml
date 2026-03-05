@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  umbraco:
+    container_name: umbraco_sqlite
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"
+      - "8443:443"
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: "https://+:443;http://+:80"
+      ASPNETCORE_Kestrel__Certificates__Default__Password: "YourPassword123"
+      ASPNETCORE_Kestrel__Certificates__Default__Path: "/https/umbraco.pfx"
+    volumes:
+      - ./https:/https
+      - ./umbraco/Data:/app/umbraco/Data
+      - ./wwwroot/media:/app/wwwroot/media
+      - ./umbraco/Logs:/app/umbraco/Logs
