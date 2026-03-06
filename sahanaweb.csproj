@@ -5,6 +5,10 @@
     <Nullable>enable</Nullable>
     <CompressionEnabled>false</CompressionEnabled> <!-- Disable compression. E.g. for umbraco backoffice files. These files should be precompressed by node and not let dotnet handle it -->
   </PropertyGroup>
+  <ItemGroup>
+    <Content Include="wwwroot\media\0smf20hq\hero-bg1.png" />
+    <Content Include="wwwroot\media\3o1laziz\logo.png" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Umbraco.Cms" Version="15.3.0" />
