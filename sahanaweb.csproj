@@ -12,6 +12,8 @@
 
   <ItemGroup>
     <PackageReference Include="Umbraco.Cms" Version="15.3.0" />
+	  <PackageReference Include="Umbraco.Forms" Version="17.2.1" />
+
   </ItemGroup>
 
   <ItemGroup>
