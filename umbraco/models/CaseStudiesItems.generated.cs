@@ -58,6 +58,14 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual string Challenges => this.Value<string>(_publishedValueFallback, "challenges");
 
 		///<summary>
+		/// Challenges Points
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "15.3.0+131c9cd")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("challengesPoints")]
+		public virtual global::System.Collections.Generic.IEnumerable<string> ChallengesPoints => this.Value<global::System.Collections.Generic.IEnumerable<string>>(_publishedValueFallback, "challengesPoints");
+
+		///<summary>
 		/// Clients Name
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "15.3.0+131c9cd")]
@@ -98,11 +106,27 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual string Solutions => this.Value<string>(_publishedValueFallback, "solutions");
 
 		///<summary>
+		/// Solutions Points
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "15.3.0+131c9cd")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("solutionsPoints")]
+		public virtual global::System.Collections.Generic.IEnumerable<string> SolutionsPoints => this.Value<global::System.Collections.Generic.IEnumerable<string>>(_publishedValueFallback, "solutionsPoints");
+
+		///<summary>
 		/// Tags
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "15.3.0+131c9cd")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("tags")]
 		public virtual global::System.Collections.Generic.IEnumerable<string> Tags => this.Value<global::System.Collections.Generic.IEnumerable<string>>(_publishedValueFallback, "tags");
+
+		///<summary>
+		/// Tech Stacks
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "15.3.0+131c9cd")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("techStacks")]
+		public virtual global::System.Collections.Generic.IEnumerable<string> TechStacks => this.Value<global::System.Collections.Generic.IEnumerable<string>>(_publishedValueFallback, "techStacks");
 	}
 }

@@ -1,10 +1,9 @@
-﻿using Microsoft.AspNetCore.Cors.Infrastructure;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using Umbraco.Cms.Core.Models;
+using Umbraco.Cms.Core.Models.Blocks;
 using Umbraco.Cms.Core.Models.PublishedContent;
 using Umbraco.Cms.Core.Web;
-using static sahanaweb.Constants.UmbracoAliases;
-using Umbraco.Cms.Core.Models;
-using Umbraco.Cms.Web.Common.PublishedModels;
+
 namespace sahanaweb.Controller
 {
     [ApiController]
@@ -12,10 +11,10 @@ namespace sahanaweb.Controller
     public class HeaderController : ControllerBase
     {
         private readonly IUmbracoContextFactory _umbraco;
+
         public HeaderController(IUmbracoContextFactory umbraco)
         {
             _umbraco = umbraco;
-
         }
 
         [HttpGet]
@@ -28,52 +27,128 @@ namespace sahanaweb.Controller
                 .FirstOrDefault(x => x.ContentType.Alias == "home");
 
             if (home == null)
-                return NotFound("Home node not found.");
+                return NotFound();
 
-            var props = home.Value<IPublishedElement>("header");
-
+            // ✅ HEADER
             var headerData = new
             {
-                siteNames = home?.Value<string>(HeaderAliases.Properties.SiteNames),
-                whiteLogo = home?.Value<IPublishedContent>(HeaderAliases.Properties.WhiteLogo)?.Url(),
-                logo = home?.Value<IPublishedContent>(HeaderAliases.Properties.Logo)?.Url(),
-                links = home?.Value<IEnumerable<Link>>(HeaderAliases.Properties.Links),
-                usefulLinkTitle = home?.Value<string>(HeaderAliases.Properties.UsefulLinkTitle),
-                copyrightText = home?.Value<string>(HeaderAliases.Properties.CopyrightText),
-                siteUrl = home?.Value<Link>(HeaderAliases.Properties.SiteUrl),
-                icon = home?.Value<IEnumerable<IPublishedContent>>(HeaderAliases.Properties.Icon),
-                subHeading = home?.Value<string>(HeaderAliases.Properties.SubHeading),
-                submitButton = home?.Value<string>(HeaderAliases.Properties.SubmitButton),
-                newslettterSection = home?.Value<string>(HeaderAliases.Properties.NewslettterSection),
-                search = home?.Value<string>(HeaderAliases.Properties.Search),
-                account = home?.Value<string>(HeaderAliases.Properties.Account),
-                socialMediaLinks = home?.Value<IEnumerable<Link>>(HeaderAliases.Properties.SocialMediaLinks)
+                siteName = home.Value<string>("siteName"),
+                logo = home.Value<IPublishedContent>("logo")?.Url(),
+                whiteLogo = home.Value<IPublishedContent>("whiteLogo")?.Url(),
+                servicesLinks = MapLinks(home, "servicesLinks"),
+                companyLinks = MapLinks(home, "companyLinks"),
+                recognitionLinks = MapLinks(home, "recognitionLinks"),
+                knowledgeHubLinks = MapLinks(home, "knowledgeHubLinks"),
+                latestLinks = MapLinks(home, "latestLinks"),
+                productsPlatformsLinks = MapLinks(home, "productsPlatformsLinks"),
+                investorInformationLinks = MapLinks(home, "investorInformationLinks"),
+                investorGalleryLinks = MapLinks(home, "investorGalleryLinks"),
+                industryLinks = MapLinks(home, "industryLinks"),
+                implementedRoutesLinks = MapLinks(home, "implementedRoutesLinks"),
+                featuredItems = MapFeaturedBlock(home),
+            };
+    {
+    };
+
+            // ✅ FOOTER DATA
+            var footer = new
+            {
+                subHeading = home.Value<string>("subHeading"),
+                icon = home.Value<IPublishedContent>("icon")?.Url(),
+                siteUrl = home.Value<string>("siteUrl"),
+                copyrightText = home.Value<string>("copyrightText"),
+
+                // 🔗 Social
+                socialMediaLinks = MapLinks(home, "socialMediaLinks"),
+
+                // 🔗 Footer columns
+                whatWeDoLinks = MapLinks(home, "servicesLinks"),
+                industriesLinks = MapLinks(home, "industriesLinks"),
+                companiesLinks = MapLinks(home, "companyLinks"),
+                insightsLinks = MapLinks(home, "knowledgeHubLinks"),
+
+                // 📍 Address & Contact (manual fields OR string)
+                address = home.Value<string>("address"),
+                phone = home.Value<string>("phone"),
+                email = home.Value<string>("email"),
+                addressAndContact = home.Value<string>("address"),
+                contactNumber = home.Value<string>("contactNumber"),
+                contactNumber2 = home.Value<string>("contactNumber2"),
+                mail1 = home.Value<string>("mail1"),
+                mail2 = home.Value<string>("mail2"),
+
+
+                // 📝 Form
+                formHeadline = home.Value<string>("formHeadline"),
+                formSubHeadline = home.Value<string>("fromSubHeadline"),
+
+                // 🔗 Other Links
+                otherLinks = MapLinks(home, "otherLinks")
             };
 
-            var navItems = BuildNavigation(home.Children());
+            return Ok(new
+            {
+                header = headerData,
+                footer
+            });
+        }        // ✅ Fetches links AND their children from a nested content property
+        private List<MegaMenuLink> MapLinks(IPublishedContent home, string alias)
+        {
+            var links = home.Value<IEnumerable<Link>>(alias)?.ToList();
 
-            return Ok(new { header = headerData, navMenu = navItems });
+            if (links == null || links.Count == 0)
+                return new List<MegaMenuLink>();
+
+            return links.Select(link => new MegaMenuLink
+            {
+                Label = link.Name,
+                Href = link.Url ?? "#"
+            }).ToList();
+        }
+       
+        public class FeaturedItem
+        {
+            public string Label { get; set; }
+            public string Description { get; set; }
+            public string Image { get; set; }
+            public string Link { get; set; }
+        }
+        private List<FeaturedItem> MapFeaturedBlock(IPublishedContent home)
+        {
+            var block = home.Value<BlockListModel>("featuredBlock");
+
+            if (block == null || !block.Any())
+                return new List<FeaturedItem>();
+
+            return block.Select(x =>
+            {
+                var content = x.Content;
+
+                return new FeaturedItem
+                {
+                    Label = content.Value<string>("label"),
+                    Description = content.Value<string>("description"),
+                    Image = content.Value<IPublishedContent>("image")?.Url(),
+                    Link = content.Value<Link>("link")?.Url
+                };
+            }).ToList();
+        }
+        public class MegaMenuItem
+        {
+            public string Label { get; set; }
+            public List<MegaMenuColumn> Cols { get; set; } = new();
         }
 
-        private IEnumerable<object> BuildNavigation(IEnumerable<IPublishedContent> nodes)
+        public class MegaMenuColumn
         {
-            foreach (var node in nodes)
-            {
-                bool show = node.Value<bool>(HeaderAliases.Navigation.ShowInNavigation);
-                if (!show) continue;
+            public string Heading { get; set; }
+            public List<MegaMenuLink> Items { get; set; } = new();
+        }
 
-                bool clickable = node.Value<bool>(HeaderAliases.Navigation.isClickable);
-
-                yield return new
-                {
-                    id = node.Id,
-                    title = node.Value<string>(HeaderAliases.Navigation.NavigationTitle) ?? node.Name,
-                    url = clickable ? node.Url() : "#",
-                    clickable,
-                    showInNavigation = true,
-                    children = BuildNavigation(node.Children())
-                };
-            }
+        public class MegaMenuLink
+        {
+            public string Label { get; set; }
+            public string Href { get; set; }
         }
     }
 }

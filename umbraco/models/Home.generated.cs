@@ -58,6 +58,38 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel Content => this.Value<global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel>(_publishedValueFallback, "content");
 
 		///<summary>
+		/// Address
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "15.3.0+131c9cd")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("address")]
+		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString Address => global::Umbraco.Cms.Web.Common.PublishedModels.FooterBase.GetAddress(this, _publishedValueFallback);
+
+		///<summary>
+		/// Companies Links
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "15.3.0+131c9cd")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("companiesLinks")]
+		public virtual global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Core.Models.Link> CompaniesLinks => global::Umbraco.Cms.Web.Common.PublishedModels.FooterBase.GetCompaniesLinks(this, _publishedValueFallback);
+
+		///<summary>
+		/// Contact Number1
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "15.3.0+131c9cd")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("contactNumber")]
+		public virtual string ContactNumber => global::Umbraco.Cms.Web.Common.PublishedModels.FooterBase.GetContactNumber(this, _publishedValueFallback);
+
+		///<summary>
+		/// Contact Number 2
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "15.3.0+131c9cd")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("contactNumber2")]
+		public virtual string ContactNumber2 => global::Umbraco.Cms.Web.Common.PublishedModels.FooterBase.GetContactNumber2(this, _publishedValueFallback);
+
+		///<summary>
 		/// Copyright Text
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "15.3.0+131c9cd")]
@@ -66,12 +98,76 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual string CopyrightText => global::Umbraco.Cms.Web.Common.PublishedModels.FooterBase.GetCopyrightText(this, _publishedValueFallback);
 
 		///<summary>
+		/// Form Headline
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "15.3.0+131c9cd")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("formHeadline")]
+		public virtual string FormHeadline => global::Umbraco.Cms.Web.Common.PublishedModels.FooterBase.GetFormHeadline(this, _publishedValueFallback);
+
+		///<summary>
+		/// Form Selection
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "15.3.0+131c9cd")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("formSelection")]
+		public virtual global::Umbraco.Forms.Core.PropertyEditors.Models.FormDetails FormSelection => global::Umbraco.Cms.Web.Common.PublishedModels.FooterBase.GetFormSelection(this, _publishedValueFallback);
+
+		///<summary>
+		/// Form  SubHeadline
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "15.3.0+131c9cd")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("fromSubHeadline")]
+		public virtual string FromSubHeadline => global::Umbraco.Cms.Web.Common.PublishedModels.FooterBase.GetFromSubHeadline(this, _publishedValueFallback);
+
+		///<summary>
 		/// Icon
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "15.3.0+131c9cd")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("icon")]
 		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops Icon => global::Umbraco.Cms.Web.Common.PublishedModels.FooterBase.GetIcon(this, _publishedValueFallback);
+
+		///<summary>
+		/// Industries Links
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "15.3.0+131c9cd")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("industriesLinks")]
+		public virtual global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Core.Models.Link> IndustriesLinks => global::Umbraco.Cms.Web.Common.PublishedModels.FooterBase.GetIndustriesLinks(this, _publishedValueFallback);
+
+		///<summary>
+		/// Insights Links
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "15.3.0+131c9cd")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("insightsLinks")]
+		public virtual global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Core.Models.Link> InsightsLinks => global::Umbraco.Cms.Web.Common.PublishedModels.FooterBase.GetInsightsLinks(this, _publishedValueFallback);
+
+		///<summary>
+		/// Mail 1
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "15.3.0+131c9cd")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("mail1")]
+		public virtual string Mail1 => global::Umbraco.Cms.Web.Common.PublishedModels.FooterBase.GetMail1(this, _publishedValueFallback);
+
+		///<summary>
+		/// Mail 2
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "15.3.0+131c9cd")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("mail2")]
+		public virtual string Mail2 => global::Umbraco.Cms.Web.Common.PublishedModels.FooterBase.GetMail2(this, _publishedValueFallback);
+
+		///<summary>
+		/// Other Links
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "15.3.0+131c9cd")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("otherLinks")]
+		public virtual global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Core.Models.Link> OtherLinks => global::Umbraco.Cms.Web.Common.PublishedModels.FooterBase.GetOtherLinks(this, _publishedValueFallback);
 
 		///<summary>
 		/// SiteUrl
@@ -98,6 +194,94 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual string SubHeading => global::Umbraco.Cms.Web.Common.PublishedModels.FooterBase.GetSubHeading(this, _publishedValueFallback);
 
 		///<summary>
+		/// What We Do Links
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "15.3.0+131c9cd")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("whatWeDoLinks")]
+		public virtual global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Core.Models.Link> WhatWeDoLinks => global::Umbraco.Cms.Web.Common.PublishedModels.FooterBase.GetWhatWeDoLinks(this, _publishedValueFallback);
+
+		///<summary>
+		/// Company links
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "15.3.0+131c9cd")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("companyLinks")]
+		public virtual global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Core.Models.Link> CompanyLinks => global::Umbraco.Cms.Web.Common.PublishedModels.HeaderBase.GetCompanyLinks(this, _publishedValueFallback);
+
+		///<summary>
+		/// Featured Block
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "15.3.0+131c9cd")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("featuredBlock")]
+		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel FeaturedBlock => global::Umbraco.Cms.Web.Common.PublishedModels.HeaderBase.GetFeaturedBlock(this, _publishedValueFallback);
+
+		///<summary>
+		/// Heading
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "15.3.0+131c9cd")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("heading")]
+		public virtual global::System.Collections.Generic.IEnumerable<string> Heading => global::Umbraco.Cms.Web.Common.PublishedModels.HeaderBase.GetHeading(this, _publishedValueFallback);
+
+		///<summary>
+		/// Implemented Routes Links
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "15.3.0+131c9cd")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("implementedRoutesLinks")]
+		public virtual global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Core.Models.Link> ImplementedRoutesLinks => global::Umbraco.Cms.Web.Common.PublishedModels.HeaderBase.GetImplementedRoutesLinks(this, _publishedValueFallback);
+
+		///<summary>
+		/// Industry Links
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "15.3.0+131c9cd")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("industryLinks")]
+		public virtual global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Core.Models.Link> IndustryLinks => global::Umbraco.Cms.Web.Common.PublishedModels.HeaderBase.GetIndustryLinks(this, _publishedValueFallback);
+
+		///<summary>
+		/// Investor Gallery Links
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "15.3.0+131c9cd")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("investorGalleryLinks")]
+		public virtual global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Core.Models.Link> InvestorGalleryLinks => global::Umbraco.Cms.Web.Common.PublishedModels.HeaderBase.GetInvestorGalleryLinks(this, _publishedValueFallback);
+
+		///<summary>
+		/// Investor Information Links
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "15.3.0+131c9cd")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("investorInformationLinks")]
+		public virtual global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Core.Models.Link> InvestorInformationLinks => global::Umbraco.Cms.Web.Common.PublishedModels.HeaderBase.GetInvestorInformationLinks(this, _publishedValueFallback);
+
+		///<summary>
+		/// Knowledge Hub Links
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "15.3.0+131c9cd")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("knowledgeHubLinks")]
+		public virtual global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Core.Models.Link> KnowledgeHubLinks => global::Umbraco.Cms.Web.Common.PublishedModels.HeaderBase.GetKnowledgeHubLinks(this, _publishedValueFallback);
+
+		///<summary>
+		/// Label
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "15.3.0+131c9cd")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("label")]
+		public virtual global::System.Collections.Generic.IEnumerable<string> Label => global::Umbraco.Cms.Web.Common.PublishedModels.HeaderBase.GetLabel(this, _publishedValueFallback);
+
+		///<summary>
+		/// Latest Links
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "15.3.0+131c9cd")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("latestLinks")]
+		public virtual global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Core.Models.Link> LatestLinks => global::Umbraco.Cms.Web.Common.PublishedModels.HeaderBase.GetLatestLinks(this, _publishedValueFallback);
+
+		///<summary>
 		/// Logo
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "15.3.0+131c9cd")]
@@ -106,12 +290,36 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops Logo => global::Umbraco.Cms.Web.Common.PublishedModels.HeaderBase.GetLogo(this, _publishedValueFallback);
 
 		///<summary>
-		/// Nav Menu
+		/// Industries Links
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "15.3.0+131c9cd")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("navMenu")]
 		public virtual global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Core.Models.Link> NavMenu => global::Umbraco.Cms.Web.Common.PublishedModels.HeaderBase.GetNavMenu(this, _publishedValueFallback);
+
+		///<summary>
+		/// Products & Platforms Links
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "15.3.0+131c9cd")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("productsPlatformsLinks")]
+		public virtual global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Core.Models.Link> ProductsPlatformsLinks => global::Umbraco.Cms.Web.Common.PublishedModels.HeaderBase.GetProductsPlatformsLinks(this, _publishedValueFallback);
+
+		///<summary>
+		/// Recognition Links
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "15.3.0+131c9cd")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("recognitionLinks")]
+		public virtual global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Core.Models.Link> RecognitionLinks => global::Umbraco.Cms.Web.Common.PublishedModels.HeaderBase.GetRecognitionLinks(this, _publishedValueFallback);
+
+		///<summary>
+		/// Services Links
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "15.3.0+131c9cd")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("servicesLinks")]
+		public virtual global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Core.Models.Link> ServicesLinks => global::Umbraco.Cms.Web.Common.PublishedModels.HeaderBase.GetServicesLinks(this, _publishedValueFallback);
 
 		///<summary>
 		/// Site Name
