@@ -56,7 +56,15 @@ namespace sahanaweb.Controller
 
                     var content = block.Content;
                     var pdf = content.Value<IPublishedContent>("pdf");
+                    var image = content.Value<IPublishedContent>("image");
 
+                    var imageData = image != null ? new
+                    {
+                        url = image.Url(),
+                        name = image.Name,
+                        width = image.Value<int?>("umbracoWidth"),
+                        height = image.Value<int?>("umbracoHeight")
+                    } : null;
                     var pdfData = pdf != null ? new
                     {
                         url = pdf.Url(),
@@ -69,6 +77,7 @@ namespace sahanaweb.Controller
                         year = content.Value<DateTime?>("year"),
                         summary = content.Value<string>("summary"),
                         pdf = pdfData, // ✅ SAFE
+                        image  = imageData,
 
                         pageTitle = item.Name,
                         url = item.Url()

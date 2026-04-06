@@ -22,20 +22,59 @@ namespace sahanaweb.Controller
         {
             using var refCtx = _umbraco.EnsureUmbracoContext();
             var ctx = refCtx.UmbracoContext;
+            var roots = ctx.Content.GetAtRoot();
 
             var home = ctx.Content.GetAtRoot()
-                .FirstOrDefault(x => x.ContentType.Alias == "home");
-
-            if (home == null)
+      .Where(x => x.ContentType.Alias == "home")
+      .Skip(1)
+      .FirstOrDefault();
+            var home1 = ctx.Content.GetAtRoot()
+            .FirstOrDefault(x => x.Name == "Home Header");
+            if (home == null)   
                 return NotFound();
+            var child = home.Children();
+            var servicesNode = home.Children()
+    .FirstOrDefault(x => x.ContentType.Alias == "industry");
+            var ecosystemNode = home.Children()
+    .FirstOrDefault(x => x.ContentType.Alias == "ecoSystemSubPages"); // check alias
+            var ecosystemTree = ecosystemNode?.Children()
+     ?.Select(item => new
+     {
+         label = item.Name,
+         href = item.Url(),
+         children = item.Children()
+             .Select(child => new
+             {
+                 label = child.Name,
+                 href = child.Url()
+             })
+             .ToList()
+     })
+     .ToList();
 
+            var servicesTree = servicesNode?.Children()
+                .Select(service => new
+                {
+                    label = service.Name,
+                    href = service.Url(),
+                    children = service.Children()
+                        .Select(child => new
+                        {
+                            label = child.Name,
+                            href = child.Url()
+                        })
+                        .ToList()
+                })
+                .ToList();
             // ✅ HEADER
             var headerData = new
             {
                 siteName = home.Value<string>("siteName"),
                 logo = home.Value<IPublishedContent>("logo")?.Url(),
                 whiteLogo = home.Value<IPublishedContent>("whiteLogo")?.Url(),
-                servicesLinks = MapLinks(home, "servicesLinks"),
+                servicesLinks = servicesTree,
+                ecosystemLinks = ecosystemTree,   // ✅ NEW
+
                 companyLinks = MapLinks(home, "companyLinks"),
                 recognitionLinks = MapLinks(home, "recognitionLinks"),
                 knowledgeHubLinks = MapLinks(home, "knowledgeHubLinks"),
