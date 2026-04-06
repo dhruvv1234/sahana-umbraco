@@ -90,19 +90,19 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual string HeroTitle => this.Value<string>(_publishedValueFallback, "heroTitle");
 
 		///<summary>
-		/// Metrics
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "15.3.0+131c9cd")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("metrics")]
-		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel Metrics => this.Value<global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel>(_publishedValueFallback, "metrics");
-
-		///<summary>
 		/// Page Name
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "15.3.0+131c9cd")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("pagename")]
 		public virtual string Pagename => this.Value<string>(_publishedValueFallback, "pagename");
+
+		///<summary>
+		/// Slider Block
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "15.3.0+131c9cd")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("sliderBlock")]
+		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel SliderBlock => this.Value<global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel>(_publishedValueFallback, "sliderBlock");
 	}
 }

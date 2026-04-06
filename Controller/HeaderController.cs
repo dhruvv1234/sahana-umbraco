@@ -95,7 +95,7 @@ namespace sahanaweb.Controller
         private List<MegaMenuLink> MapLinks(IPublishedContent home, string alias)
         {
             var links = home.Value<IEnumerable<Link>>(alias)?.ToList();
-
+                
             if (links == null || links.Count == 0)
                 return new List<MegaMenuLink>();
 
