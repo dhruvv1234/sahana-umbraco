@@ -20,7 +20,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 {
 	/// <summary>Inverstor Details Block</summary>
 	[PublishedModel("inverstorDetailsBlock")]
-	public partial class InverstorDetailsBlock : PublishedContentModel
+	public partial class InverstorDetailsBlock : PublishedElementModel
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -41,12 +41,132 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		private IPublishedValueFallback _publishedValueFallback;
 
 		// ctor
-		public InverstorDetailsBlock(IPublishedContent content, IPublishedValueFallback publishedValueFallback)
+		public InverstorDetailsBlock(IPublishedElement content, IPublishedValueFallback publishedValueFallback)
 			: base(content, publishedValueFallback)
 		{
 			_publishedValueFallback = publishedValueFallback;
 		}
 
 		// properties
+
+		///<summary>
+		/// Description
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "15.3.0+131c9cd")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("description")]
+		public virtual string Description => this.Value<string>(_publishedValueFallback, "description");
+
+		///<summary>
+		/// Doc Headline
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "15.3.0+131c9cd")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("docHeadline")]
+		public virtual string DocHeadline => this.Value<string>(_publishedValueFallback, "docHeadline");
+
+		///<summary>
+		/// Doc Label
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "15.3.0+131c9cd")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("docLabel")]
+		public virtual string DocLabel => this.Value<string>(_publishedValueFallback, "docLabel");
+
+		///<summary>
+		/// Doc List
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "15.3.0+131c9cd")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("docList")]
+		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel DocList => this.Value<global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel>(_publishedValueFallback, "docList");
+
+		///<summary>
+		/// Doc SubHeadline
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "15.3.0+131c9cd")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("docSubHeadline")]
+		public virtual string DocSubHeadline => this.Value<string>(_publishedValueFallback, "docSubHeadline");
+
+		///<summary>
+		/// FAQ Headline
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "15.3.0+131c9cd")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("faqheadline")]
+		public virtual string Faqheadline => this.Value<string>(_publishedValueFallback, "faqheadline");
+
+		///<summary>
+		/// FAQ Label 
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "15.3.0+131c9cd")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("faqlabel")]
+		public virtual string Faqlabel => this.Value<string>(_publishedValueFallback, "faqlabel");
+
+		///<summary>
+		/// FAQ List
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "15.3.0+131c9cd")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("faqList")]
+		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel FaqList => this.Value<global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel>(_publishedValueFallback, "faqList");
+
+		///<summary>
+		/// FAQ SubHeadline
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "15.3.0+131c9cd")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("faqsubHeadline")]
+		public virtual string FaqsubHeadline => this.Value<string>(_publishedValueFallback, "faqsubHeadline");
+
+		///<summary>
+		/// Headline
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "15.3.0+131c9cd")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("headline")]
+		public virtual string Headline => this.Value<string>(_publishedValueFallback, "headline");
+
+		///<summary>
+		/// Label
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "15.3.0+131c9cd")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("label")]
+		public virtual string Label => this.Value<string>(_publishedValueFallback, "label");
+
+		///<summary>
+		/// Rich Text
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "15.3.0+131c9cd")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("richText")]
+		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString RichText => this.Value<global::Umbraco.Cms.Core.Strings.IHtmlEncodedString>(_publishedValueFallback, "richText");
+
+		///<summary>
+		/// Snapshot Headline
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "15.3.0+131c9cd")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("snapshotHeadline")]
+		public virtual string SnapshotHeadline => this.Value<string>(_publishedValueFallback, "snapshotHeadline");
+
+		///<summary>
+		/// Snapshot Label
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "15.3.0+131c9cd")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("snapshotLabel")]
+		public virtual string SnapshotLabel => this.Value<string>(_publishedValueFallback, "snapshotLabel");
+
+		///<summary>
+		/// Snapshot SubHeadline
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "15.3.0+131c9cd")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("snapshotSubHeadline")]
+		public virtual string SnapshotSubHeadline => this.Value<string>(_publishedValueFallback, "snapshotSubHeadline");
 	}
 }

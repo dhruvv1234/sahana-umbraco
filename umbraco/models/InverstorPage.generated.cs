@@ -18,7 +18,7 @@ using Umbraco.Extensions;
 
 namespace Umbraco.Cms.Web.Common.PublishedModels
 {
-	/// <summary>Inverstor Page</summary>
+	/// <summary>Inverstor Sub Page</summary>
 	[PublishedModel("inverstorPage")]
 	public partial class InverstorPage : PublishedContentModel
 	{

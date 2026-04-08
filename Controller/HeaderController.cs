@@ -34,7 +34,7 @@ namespace sahanaweb.Controller
                 return NotFound();
             var child = home.Children();
             var servicesNode = home.Children()
-    .FirstOrDefault(x => x.ContentType.Alias == "industry");
+    .FirstOrDefault(x => x.ContentType.Alias == "industry");    
             var ecosystemNode = home.Children()
     .FirstOrDefault(x => x.ContentType.Alias == "ecoSystemSubPages"); // check alias
             var ecosystemTree = ecosystemNode?.Children()
